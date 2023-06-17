@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Welcome to the Home Page</h1>
+
+  {% if feedbacks %}
+    <h2>Feedbacks:</h2>
+    <ul>
+      {% for feedback in feedbacks %}
+        <li>{{ feedback.title }} - {{ feedback.content }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No feedbacks found.</p>
+  {% endif %}
+
+{% endblock %}
